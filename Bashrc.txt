@@ -1,0 +1,26 @@
+export JAVA_OPTS=-Djava.awt.headless=true
+export DISPLAT=:0
+
+# personal
+GREEN="\[\e[32;1m\]"
+BLUE="\[\e[36;1m\]"
+WHITE="\[\e[37;1m\]"
+BLACK="\[\e[30;1m\]"
+RED="\[\e[31;1m\]"
+YELLOW="\[\e[33;1m\]"
+PURPLE="\[\e[35;1m\]"
+DARK_GREEN="\[\e[36;1m\]"
+CLEAR="\[\e[0m\]"
+
+_JOB_="\j"
+_FILECOUNT_="Files: \$(/bin/ls -1 | /usr/bin/wc -l | /bin/sed 's: ::g')"
+_HISTORY_="\!"
+_DATE_="\$(/bin/date)"
+_CLOCK_="\t"
+_SIZE_="Size: \$(/bin/ls -lah | /usr/bin/head -n 1 | /usr/bin/cut -d ' ' -f 2)"
+_PATH_="\$(pwd)"
+_GIT_BASH_="\$(git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/')"
+
+export PS1="$RED\u$BLUE@$YELLOW\h $GREEN$_PATH_ $RED$_GIT_ $WHITE\d \A ${BLUE} forstart\n$CLEAR$"
+————————————————
+CSDN原创
